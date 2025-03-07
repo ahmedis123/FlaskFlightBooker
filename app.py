@@ -32,12 +32,13 @@ with app.app_context():
 
 # إضافة بيانات تجريبية (يمكن حذفها لاحقًا)
 def add_sample_data():
-    if not Flight.query.first():
-        flight1 = Flight(from_city="New York", to_city="Los Angeles", date="2025-03-10", price=300.00)
-        flight2 = Flight(from_city="Chicago", to_city="Miami", date="2025-03-15", price=250.00)
-        db.session.add(flight1)
-        db.session.add(flight2)
-        db.session.commit()
+    with app.app_context():  # استخدام السياق الصحيح
+        if not Flight.query.first():
+            flight1 = Flight(from_city="New York", to_city="Los Angeles", date="2025-03-10", price=300.00)
+            flight2 = Flight(from_city="Chicago", to_city="Miami", date="2025-03-15", price=250.00)
+            db.session.add(flight1)
+            db.session.add(flight2)
+            db.session.commit()
 
 add_sample_data()
 
