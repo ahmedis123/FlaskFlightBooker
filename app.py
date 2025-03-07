@@ -12,7 +12,7 @@ class Flight(db.Model):
     from_city = db.Column(db.String(100), nullable=False)
     to_city = db.Column(db.String(100), nullable=False)
     date = db.Column(db.String(10), nullable=False)
-    price = db.Column(db.Float), nullable=False)
+    price = db.Column(db.Float, nullable=False)  # تم تصحيح الخطأ هنا
 
     def __repr__(self):
         return f"<Flight {self.from_city} to {self.to_city} on {self.date}>"
