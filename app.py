@@ -12,7 +12,7 @@ class Flight(db.Model):
     from_city = db.Column(db.String(100), nullable=False)
     to_city = db.Column(db.String(100), nullable=False)
     date = db.Column(db.String(10), nullable=False)
-    price = db.Column(db.Float, nullable=False)
+    price = db.Column(db.Float), nullable=False)
 
     def __repr__(self):
         return f"<Flight {self.from_city} to {self.to_city} on {self.date}>"
@@ -159,5 +159,6 @@ def templates():
         </html>
         """
     }
+
 if __name__ == '__main__':
-         app.run(host='0.0.0.0', port=10000, debug=True) 
+    app.run(host='0.0.0.0', port=10000, debug=True)
