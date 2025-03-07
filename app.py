@@ -12,7 +12,7 @@ class Flight(db.Model):
     from_city = db.Column(db.String(100), nullable=False)
     to_city = db.Column(db.String(100), nullable=False)
     date = db.Column(db.String(10), nullable=False)
-    price = db.Column(db.Float), nullable=False)
+    price = db.Column(db.Float, nullable=False)  # تم تصحيح الخطأ هنا
 
     def __repr__(self):
         return f"<Flight {self.from_city} to {self.to_city} on {self.date}>"
@@ -25,6 +25,7 @@ class Booking(db.Model):
 
     def __repr__(self):
         return f"<Booking {self.name} for flight {self.flight_id}>"
+
 
 # إنشاء الجداول في قاعدة البيانات
 with app.app_context():
