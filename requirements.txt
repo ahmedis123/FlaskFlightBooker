@@ -1,2 +1,3 @@
-Flask  
-Flask-SQLAlchemy
+Flask==2.3.2
+Flask-SQLAlchemy==3.0.2
+Flask-WTF==1.1.1
